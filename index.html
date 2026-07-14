@@ -277,6 +277,277 @@
         .brand-item img { max-height:55px; max-width:150px; width:100%; height:100%; object-fit:contain; display:block; }
         @keyframes scrollBrands { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
         @media(max-width:768px){ .brand-item{width:120px;height:55px;} .brand-item img{max-height:45px;max-width:110px;} .brands-track{gap:2.5rem;} }
+
+        /* ===== GOOGLE RATING BADGE ===== */
+        .google-rating-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            max-width: 420px;
+            margin: 0 auto 2rem;
+            transition: all 0.4s;
+        }
+        .google-rating-badge:hover {
+            border-color: var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+        }
+        .rating-left {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .google-icon {
+            width: 32px;
+            height: 32px;
+        }
+        .rating-text {
+            display: flex;
+            align-items: baseline;
+            gap: 0.1rem;
+        }
+        .rating-score {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+        .rating-divider {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+        .rating-total {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .rating-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.2rem;
+        }
+        .rating-stars {
+            display: flex;
+            gap: 2px;
+        }
+        .rating-stars svg {
+            width: 18px;
+            height: 18px;
+            color: #FFB300;
+        }
+        .rating-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        @media(max-width:500px){
+            .google-rating-badge { flex-direction: column; gap: 0.6rem; padding: 1rem; }
+            .rating-right { align-items: center; }
+        }
+
+        /* ===== TESTIMONIALS CAROUSEL ===== */
+        .testimonials-carousel-wrapper {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .testimonials-carousel {
+            overflow: hidden;
+            flex: 1;
+            border-radius: 16px;
+        }
+        .testimonials-track {
+            display: flex;
+            gap: 1.5rem;
+            transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+        .testimonials-carousel .testimonial-card {
+            flex: 0 0 calc(33.333% - 1rem);
+            min-width: 300px;
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.4s;
+        }
+        .testimonials-carousel .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        .testimonial-nav {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+        .testimonial-nav:hover {
+            background: var(--cyan);
+            color: var(--dark);
+            border-color: var(--cyan);
+        }
+        .testimonial-nav svg {
+            width: 20px;
+            height: 20px;
+        }
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-top: 1.2rem;
+        }
+        .testimonial-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .testimonial-dot.active {
+            background: var(--cyan);
+            width: 24px;
+            border-radius: 4px;
+        }
+        @media(max-width:900px){
+            .testimonials-carousel .testimonial-card { flex: 0 0 calc(50% - 0.75rem); min-width: 260px; }
+        }
+        @media(max-width:600px){
+            .testimonials-carousel .testimonial-card { flex: 0 0 85%; min-width: 260px; }
+            .testimonial-nav { display: none; }
+            .testimonials-carousel-wrapper { padding: 0; }
+            .testimonials-carousel { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+            .testimonials-carousel::-webkit-scrollbar { display: none; }
+            .testimonials-track { scroll-snap-type: x mandatory; }
+            .testimonials-carousel .testimonial-card { scroll-snap-align: center; }
+        }
+
+        /* ===== BRANDS HEADER ===== */
+        .brands-carousel .section-header h2 {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        /* ===== PROJECTS MOBILE OVERLAY ===== */
+        .project-item .project-overlay {
+            opacity: 1;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+        }
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+        .project-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            z-index: 2;
+        }
+        .project-item:hover img {
+            transform: scale(1.08);
+        }
+        @media(min-width: 769px) {
+            .project-item .project-overlay {
+                opacity: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+            }
+            .project-item:hover .project-overlay {
+                opacity: 1;
+            }
+        }
+
+        /* ===== LIGHTBOX SWIPE GALLERY ===== */
+        .lightbox-main {
+            position: relative;
+            touch-action: pan-y;
+        }
+        .lightbox-swipe-hint {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            z-index: 5;
+            pointer-events: none;
+            opacity: 0.8;
+            animation: swipeHint 3s ease-in-out infinite;
+        }
+        .lightbox-swipe-hint svg {
+            width: 14px;
+            height: 14px;
+        }
+        @keyframes swipeHint {
+            0%, 100% { transform: translateX(-50%) translateX(0); }
+            25% { transform: translateX(-50%) translateX(-5px); }
+            75% { transform: translateX(-50%) translateX(5px); }
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: rgba(6,8,10,0.8);
+            color: var(--cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 5;
+            backdrop-filter: blur(4px);
+        }
+        .lightbox-nav:hover {
+            background: var(--cyan);
+            color: var(--dark);
+            border-color: var(--cyan);
+        }
+        .lightbox-nav.prev { left: 10px; }
+        .lightbox-nav.next { right: 10px; }
+        .lightbox-nav svg { width: 20px; height: 20px; }
+        @media(max-width: 600px) {
+            .lightbox-nav { display: none; }
+        }
+
+        /* ===== OFFERS SUBPRICE ===== */
+        .offer-subprice {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
 </style>
 </head>
 <body>
@@ -453,17 +724,28 @@
 </section>
 
 <section class="brands-carousel" id="marcas">
+    <div class="section-header reveal" style="margin-bottom:1.5rem;">
+        <span class="section-tag">Sponsor Partners</span>
+        <h2 style="font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:500;color:var(--text-muted);margin-top:0.4rem;">Trabajamos con las Mejores Marcas</h2>
+    </div>
     <div class="brands-track-wrapper reveal">
         <div class="brands-track" id="brandsTrack">
-            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/515268_rf4xja.avif" alt="Lutron"></div>
-            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/bang-olufsen-logo-1_bnla9l.png" alt="Bang & Olufsen"></div>
-            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/Sonos-Logo-white_axiilo.webp" alt="Sonos"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997834/Website_Design_25_dxxghq.png" alt="Lutron"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997832/sony-logo-white-1_db9cwb.webp" alt="Sony"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997832/Legrand-Logo_c1majb.jpg" alt="Legrand"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997831/images_j8abie.png" alt="Control4"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997831/Fortinet_EdataChile_logo_nxyjvj.png" alt="Fortinet"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997829/akuvox-logo-white-1024x512_ffgzb2.webp" alt="Akuvox"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783998190/246-2467258_vrx932lap-jbl-logo-black-and-white_cpfuml.png" alt="JBL"></div>
             <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/bose-logo-1_a9aqao.png" alt="Bose"></div>
             <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/images_dsswkz.png" alt="Control4"></div>
-            <!-- Duplicate for infinite scroll -->
-            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/515268_rf4xja.avif" alt="Lutron"></div>
-            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/bang-olufsen-logo-1_bnla9l.png" alt="Bang & Olufsen"></div>
-            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/Sonos-Logo-white_axiilo.webp" alt="Sonos"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997834/Website_Design_25_dxxghq.png" alt="Lutron"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997832/sony-logo-white-1_db9cwb.webp" alt="Sony"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997832/Legrand-Logo_c1majb.jpg" alt="Legrand"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997831/images_j8abie.png" alt="Control4"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997831/Fortinet_EdataChile_logo_nxyjvj.png" alt="Fortinet"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783997829/akuvox-logo-white-1024x512_ffgzb2.webp" alt="Akuvox"></div>
+            <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783998190/246-2467258_vrx932lap-jbl-logo-black-and-white_cpfuml.png" alt="JBL"></div>
             <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/bose-logo-1_a9aqao.png" alt="Bose"></div>
             <div class="brand-item"><img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783657872/images_dsswkz.png" alt="Control4"></div>
         </div>
@@ -481,36 +763,39 @@
     <div class="offers-grid">
         <div class="offer-card reveal">
             <span class="offer-badge">Más Vendido</span>
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783619037/b25bfe59f12ea1270f6934d7118c8bb9_cj4j6q.jpg" alt="Kit Cámaras de Seguridad" class="offer-img">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784033099/tramitacion_t1image_xoyj8j.png" alt="Tramitación TE-1" class="offer-img">
             <div class="offer-content">
-                <h3>Kit Cámaras de Seguridad IP</h3>
-                <p class="offer-desc">Protege tu hogar u oficina con 4 cámaras IP de alta resolución, grabación continua y acceso remoto desde tu celular.</p>
-                <div class="offer-price">$399.000 <span>CLP</span></div>
+                <h3>Tramitación TE-1</h3>
+                <p class="offer-desc">Certifica tu instalación eléctrica ante la SEC de forma rápida, segura y profesional. Hasta 10 kW de potencia instalada.</p>
+                <div class="offer-price">$199.990 <span>+ IVA</span></div>
                 <ul class="offer-features">
-                    <li>4 Cámaras IP 4MP con visión nocturna</li>
-                    <li>NVR 8 canales con disco duro 1TB</li>
-                    <li>Instalación completa incluida</li>
-                    <li>App móvil para monitoreo 24/7</li>
-                    <li>1 año de garantía en equipos</li>
+                    <li>Inspección técnica en terreno</li>
+                    <li>Levantamiento eléctrico y registro</li>
+                    <li>Plano unilineal y de planta</li>
+                    <li>Memoria explicativa y de cálculo</li>
+                    <li>Preparación de toda la documentación</li>
+                    <li>Ingreso y trámite ante la SEC</li>
+                    <li>Seguimiento hasta obtención del certificado</li>
                 </ul>
-                <a href="https://wa.me/56965199555?text=Hola%20INNOVATECH%2C%20me%20interesa%20el%20Kit%20de%20Cámaras%20de%20Seguridad%20IP" target="_blank" class="btn-primary offer-cta" rel="noopener">Solicitar por WhatsApp</a>
+                <a href="https://wa.me/56965199555?text=Hola%20INNOVATECH%2C%20me%20interesa%20la%20Tramitaci%C3%B3n%20TE-1" target="_blank" class="btn-primary offer-cta" rel="noopener">Solicitar por WhatsApp</a>
             </div>
         </div>
         <div class="offer-card reveal">
             <span class="offer-badge">Nuevo</span>
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783465448/b5ec336a3577db34c17470dd9589ce98_vxkm2w.jpg" alt="Kit Domótica Inteligente" class="offer-img">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784033098/oioioimage_qxmjqb.png" alt="Certificación Puntos de Red" class="offer-img">
             <div class="offer-content">
-                <h3>Kit Domótica Smart Home</h3>
-                <p class="offer-desc">Convierte tu hogar en inteligente con control de luces, cortinas y climatización desde tu voz o celular.</p>
-                <div class="offer-price">$549.000 <span>CLP</span></div>
+                <h3>Certificación de Puntos de Red</h3>
+                <p class="offer-desc">Verificamos y certificamos el rendimiento de tus puntos de red CAT6 / CAT6A con equipos Fluke Networks DSX-5000 calibrados.</p>
+                <div class="offer-price">$80.000 <span>+ IVA</span></div>
+                <div class="offer-subprice">Primeros 10 puntos</div>
                 <ul class="offer-features">
-                    <li>Central Hub domótico Wi-Fi</li>
-                    <li>4 Interruptores inteligentes</li>
-                    <li>2 Sensores de movimiento y apertura</li>
-                    <li>Compatible con Alexa y Google Home</li>
-                    <li>Programación de escenas incluida</li>
+                    <li>Certificación bajo estándares TIA/EIA</li>
+                    <li>Equipos Fluke Networks DSX-5000 calibrados</li>
+                    <li>Informe profesional en PDF con mediciones</li>
+                    <li>Garantía de óptimo rendimiento de red</li>
+                    <li>Punto adicional: $3.990 + IVA</li>
                 </ul>
-                <a href="https://wa.me/56965199555?text=Hola%20INNOVATECH%2C%20me%20interesa%20el%20Kit%20Domótica%20Smart%20Home" target="_blank" class="btn-primary offer-cta" rel="noopener">Solicitar por WhatsApp</a>
+                <a href="https://wa.me/56965199555?text=Hola%20INNOVATECH%2C%20me%20interesa%20la%20Certificaci%C3%B3n%20de%20Puntos%20de%20Red" target="_blank" class="btn-primary offer-cta" rel="noopener">Solicitar por WhatsApp</a>
             </div>
         </div>
     </div>
@@ -523,29 +808,33 @@
         <p>Algunos de nuestros trabajos más destacados en residencias, oficinas y espacios comerciales.</p>
     </div>
     <div class="projects-grid">
-        <div class="project-item featured reveal">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783465448/b5ec336a3577db34c17470dd9589ce98_vxkm2w.jpg" alt="Residencia Inteligente">
-            <div class="project-overlay"><div><h4>Residencia Inteligente</h4><p>Domótica Integral</p></div></div>
+        <div class="project-item featured reveal" onclick="openProjectLightbox(0)" style="cursor:pointer;">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001156/IMG_1529_cvfhh8.jpg" alt="Domótica y Automatización">
+            <div class="project-overlay"><div><h4>Domótica y Automatización</h4><p>Residencia Inteligente</p></div></div>
         </div>
-        <div class="project-item reveal">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783619037/b25bfe59f12ea1270f6934d7118c8bb9_cj4j6q.jpg" alt="Sistema de Seguridad">
-            <div class="project-overlay"><div><h4>Sistema de Seguridad</h4><p>Cámaras IP</p></div></div>
+        <div class="project-item reveal" onclick="openProjectLightbox(1)" style="cursor:pointer;">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001244/IMG_3028_qcowsn.jpg" alt="Circuito Cerrado Cámaras IP">
+            <div class="project-overlay"><div><h4>Circuito Cerrado Cámaras IP</h4><p>Vigilancia Inteligente</p></div></div>
         </div>
-        <div class="project-item reveal">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783465448/31f31dee412e2fae38ed7cea26e3e734_ifiah3.jpg" alt="Home Theater">
-            <div class="project-overlay"><div><h4>Home Theater</h4><p>Cine en Casa</p></div></div>
+        <div class="project-item reveal" onclick="openProjectLightbox(2)" style="cursor:pointer;">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001219/IMG_1521_btmd1i.jpg" alt="Control de Acceso">
+            <div class="project-overlay"><div><h4>Control de Acceso</h4><p>Seguridad Perimetral</p></div></div>
         </div>
-        <div class="project-item reveal">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783466287/f6776c5a2922e6e8d6308c0778924ef7_haxoi9.jpg" alt="Cortinas Motorizadas">
-            <div class="project-overlay"><div><h4>Cortinas Motorizadas</h4><p>Automatización</p></div></div>
+        <div class="project-item reveal" onclick="openProjectLightbox(3)" style="cursor:pointer;">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001281/IMG_9423_lkezwd.jpg" alt="Audio y Video">
+            <div class="project-overlay"><div><h4>Audio y Video</h4><p>Experiencias Inmersivas</p></div></div>
         </div>
-        <div class="project-item reveal" onclick="openLightbox()" style="cursor:pointer;">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636417/WhatsApp_Image_2026-07-09_at_3.39.33_PM_1_csfhxt.jpg" alt="Proyecto Iluminación Bahía Biscayne">
-            <div class="project-overlay"><div><h4>Proyecto Iluminación Bahía Biscayne</h4><p>Miami, EEUU — Ver galería</p></div></div>
+        <div class="project-item reveal" onclick="openProjectLightbox(4)" style="cursor:pointer;">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001056/IMG_1411_qpaudz.jpg" alt="Redes y Telecomunicaciones">
+            <div class="project-overlay"><div><h4>Redes y Telecomunicaciones</h4><p>Infraestructura de Red</p></div></div>
         </div>
-        <div class="project-item reveal">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783466287/ffcf631cef9c7507ce584f3650b09550_ot4p8b.jpg" alt="Redes Empresariales">
-            <div class="project-overlay"><div><h4>Redes Empresariales</h4><p>Infraestructura</p></div></div>
+        <div class="project-item reveal" onclick="openProjectLightbox(5)" style="cursor:pointer;">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001101/IMG_1420_2_ycdka9.jpg" alt="Instalaciones Eléctricas">
+            <div class="project-overlay"><div><h4>Instalaciones Eléctricas</h4><p>Proyectos Certificados</p></div></div>
+        </div>
+        <div class="project-item reveal" onclick="openProjectLightbox(6)" style="cursor:pointer;">
+            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636417/WhatsApp_Image_2026-07-09_at_3.39.33_PM_1_csfhxt.jpg" alt="Iluminación LED Bahía Biscayne">
+            <div class="project-overlay"><div><h4>Iluminación LED Bahía Biscayne</h4><p>Miami, EEUU — Ver galería</p></div></div>
         </div>
     </div>
 </section>
@@ -556,81 +845,116 @@
         <h2>Lo que Dicen Nuestros Clientes</h2>
         <p>Reseñas verificadas de clientes reales que confiaron en INNOVATECH para sus proyectos de tecnología.</p>
     </div>
-    <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-            <div class="google-badge">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                <span>Reseña de Google</span>
-            </div>
-            <div class="stars">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"Excelente servicio. Instalaron un sistema completo de cámaras de seguridad en mi casa en solo un día. La calidad de imagen es impresionante y la app funciona perfecto. Muy profesionales desde la cotización hasta la entrega."</p>
-            <div class="author">
-                <div class="author-avatar">JR</div>
-                <div>
-                    <div class="author-name">Juan Rodríguez</div>
-                    <div class="author-role">Cliente Residencial - Las Condes</div>
-                </div>
+
+    <!-- Google Rating Badge -->
+    <div class="google-rating-badge reveal">
+        <div class="rating-left">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="google-icon"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            <div class="rating-text">
+                <span class="rating-score">4.9</span>
+                <span class="rating-divider">/</span>
+                <span class="rating-total">5</span>
             </div>
         </div>
-        <div class="testimonial-card reveal">
-            <div class="google-badge">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                <span>Reseña de Google</span>
-            </div>
-            <div class="stars">
+        <div class="rating-right">
+            <div class="rating-stars">
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p>"Contratamos a INNOVATECH para automatizar nuestra oficina. El sistema de control de acceso biométrico y las cámaras IP quedaron impecables. El equipo es muy profesional, puntual y deja todo limpio después de la instalación. Totalmente recomendados."</p>
-            <div class="author">
-                <div class="author-avatar">CM</div>
-                <div>
-                    <div class="author-name">Carla Méndez</div>
-                    <div class="author-role">Gerente - Oficinas Vitacura</div>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial-card reveal">
-            <div class="google-badge">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                <span>Reseña de Google</span>
-            </div>
-            <div class="stars">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"El home theater que nos diseñaron superó todas las expectativas. El sonido envolvente y la calidad de imagen son de otro nivel. Además, integraron todo con control por voz. Mi familia y yo disfrutamos cada fin de semana de una experiencia de cine en casa."</p>
-            <div class="author">
-                <div class="author-avatar">AF</div>
-                <div>
-                    <div class="author-name">Andrés Fernández</div>
-                    <div class="author-role">Cliente Residencial - Lo Barnechea</div>
-                </div>
-            </div>
+            <span class="rating-count">Basado en 47 reseñas</span>
         </div>
     </div>
+
+    <div class="testimonials-carousel-wrapper reveal">
+        <button class="testimonial-nav prev" onclick="moveTestimonial(-1)" aria-label="Anterior">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="testimonials-carousel" id="testimonialsCarousel">
+            <div class="testimonials-track" id="testimonialsTrack">
+                <div class="testimonial-card">
+                    <div class="google-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        <span>Reseña de Google</span>
+                    </div>
+                    <div class="stars">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p>"Excelente servicio. Instalaron un sistema completo de cámaras de seguridad en mi casa en solo un día. La calidad de imagen es impresionante y la app funciona perfecto. Muy profesionales desde la cotización hasta la entrega."</p>
+                    <div class="author">
+                        <div class="author-avatar">JR</div>
+                        <div>
+                            <div class="author-name">Juan Rodríguez</div>
+                            <div class="author-role">Cliente Residencial - Las Condes</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="google-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        <span>Reseña de Google</span>
+                    </div>
+                    <div class="stars">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p>"Contratamos a INNOVATECH para automatizar nuestra oficina. El sistema de control de acceso biométrico y las cámaras IP quedaron impecables. El equipo es muy profesional, puntual y deja todo limpio después de la instalación. Totalmente recomendados."</p>
+                    <div class="author">
+                        <div class="author-avatar">CM</div>
+                        <div>
+                            <div class="author-name">Carla Méndez</div>
+                            <div class="author-role">Gerente - Oficinas Vitacura</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="google-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        <span>Reseña de Google</span>
+                    </div>
+                    <div class="stars">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p>"El home theater que nos diseñaron superó todas las expectativas. El sonido envolvente y la calidad de imagen son de otro nivel. Además, integraron todo con control por voz. Mi familia y yo disfrutamos cada fin de semana de una experiencia de cine en casa."</p>
+                    <div class="author">
+                        <div class="author-avatar">AF</div>
+                        <div>
+                            <div class="author-name">Andrés Fernández</div>
+                            <div class="author-role">Cliente Residencial - Lo Barnechea</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="testimonial-nav next" onclick="moveTestimonial(1)" aria-label="Siguiente">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+    </div>
+    <div class="testimonial-dots" id="testimonialDots"></div>
+
     
 </section>
-
-
 
 <section class="cta-banner reveal">
     <h2>¿Listo para Transformar tu Espacio?</h2>
     <p>Solicita una cotización gratuita y sin compromiso. Nuestros especialistas te asesorarán en encontrar la mejor solución para tu proyecto.</p>
     <a href="https://wa.me/56965199555" target="_blank" class="btn-light" rel="noopener">Contactar por WhatsApp</a>
 </section>
+
+
 
 <section class="contact" id="contacto">
     <div class="section-header reveal">
@@ -666,7 +990,6 @@
         </div>
     </div>
 </section>
-
 <section class="contact-info-footer" id="contacto-info">
     <div class="contact-info-wrapper">
         <div class="section-header reveal">
@@ -694,7 +1017,6 @@
         </div>
     </div>
 </section>
-
 <footer>
     <div class="footer-grid">
         <div class="footer-brand">
@@ -805,45 +1127,216 @@ function handleSubmit(e) {
     }, 1500);
 }
 </script>
-<!-- Lightbox Modal -->
-<div class="lightbox" id="lightbox">
-    <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+<!-- Project Lightbox Modal -->
+<div class="lightbox" id="projectLightbox">
+    <div class="lightbox-overlay" onclick="closeProjectLightbox()"></div>
     <div class="lightbox-content">
-        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">&times;</button>
+        <button class="lightbox-close" onclick="closeProjectLightbox()" aria-label="Cerrar">&times;</button>
         <div class="lightbox-header">
-            <h3>Iluminaci&oacute;n LED Arquitect&oacute;nica</h3>
-            <p>Proyecto internacional realizado en el sector m&aacute;s exclusivo de Miami, EEUU &mdash; Bah&iacute;a Biscayne</p>
+            <h3 id="lightboxProjectTitle">Proyecto</h3>
+            <p id="lightboxProjectSubtitle">Descripción</p>
         </div>
-        <div class="lightbox-main">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636322/WhatsApp_Image_2026-07-09_at_3.39.33_PM_2_fvhnqa.jpg" alt="Iluminaci&oacute;n LED" id="lightboxMainImg">
+        <div class="lightbox-main" id="lightboxMainContainer">
+            <button class="lightbox-nav prev" onclick="navigateLightbox(-1)" aria-label="Imagen anterior">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <img src="" alt="" id="lightboxProjectMainImg">
+            <button class="lightbox-nav next" onclick="navigateLightbox(1)" aria-label="Imagen siguiente">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <div class="lightbox-swipe-hint" id="swipeHint">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+                Desliza para navegar
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
         </div>
-        <div class="lightbox-thumbs">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636322/WhatsApp_Image_2026-07-09_at_3.39.33_PM_2_fvhnqa.jpg" alt="" onclick="setLightboxImg(this.src)" class="thumb active">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636415/WhatsApp_Image_2026-07-09_at_3.39.33_PM_3_qs5xlu.jpg" alt="" onclick="setLightboxImg(this.src)" class="thumb">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636416/WhatsApp_Image_2026-07-09_at_3.39.32_PM_zos1ys.jpg" alt="" onclick="setLightboxImg(this.src)" class="thumb">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636416/WhatsApp_Image_2026-07-09_at_3.39.33_PM_n47xa7.jpg" alt="" onclick="setLightboxImg(this.src)" class="thumb">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636417/WhatsApp_Image_2026-07-09_at_3.39.32_PM_1_uc7o4o.jpg" alt="" onclick="setLightboxImg(this.src)" class="thumb">
-            <img src="https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636417/WhatsApp_Image_2026-07-09_at_3.39.33_PM_1_csfhxt.jpg" alt="" onclick="setLightboxImg(this.src)" class="thumb">
-        </div>
+        <div class="lightbox-thumbs" id="lightboxProjectThumbs"></div>
     </div>
 </div>
+</div>
 <script>
-// Lightbox functions
-function openLightbox() {
-    document.getElementById('lightbox').classList.add('active');
+
+
+// ===== PROJECT LIGHTBOX =====
+const projectGalleries = [
+    {
+        title: "Domótica y Automatización",
+        subtitle: "Residencia Inteligente",
+        images: [
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001156/IMG_1529_cvfhh8.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001157/IMG_1530_dfdvcq.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001157/IMG_1534_haikxt.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001156/IMG_3836_bpychv.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001157/IMG_6835_xtwwz6.jpg"
+        ]
+    },
+    {
+        title: "Circuito Cerrado Cámaras IP",
+        subtitle: "Vigilancia Inteligente",
+        images: [
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001244/IMG_3028_qcowsn.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001244/IMG_0957_sxt4z3.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001242/IMG_0948_hy7fzb.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001241/Camaras_de_seguridad_w99tu5.png"
+        ]
+    },
+    {
+        title: "Control de Acceso",
+        subtitle: "Seguridad Perimetral",
+        images: [
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001219/IMG_1521_btmd1i.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001218/PHOTO-2024-12-15-16-43-40_xqcxw9.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001218/PHOTO-2022-12-07-17-53-29_fmrdgg.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001217/5B168FB2-06C9-41B1-A182-FC08CF54B82C_jvjxur.png"
+        ]
+    },
+    {
+        title: "Audio y Video",
+        subtitle: "Experiencias Inmersivas",
+        images: [
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001281/IMG_9423_lkezwd.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001282/IMG_0958_wacer7.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001282/IMG_4614_ludwgm.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001282/IMG_7881_fm7uks.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001282/IMG_4960_hmc7rz.jpg"
+        ]
+    },
+    {
+        title: "Redes y Telecomunicaciones",
+        subtitle: "Infraestructura de Red",
+        images: [
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001056/IMG_1411_qpaudz.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001056/IMG_1314_ay1v78.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001057/IMG_1522_xa6afh.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001056/IMG_1410_bllxym.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001056/Cableado_estructurado_cvcqub.jpg"
+        ]
+    },
+    {
+        title: "Instalaciones Eléctricas",
+        subtitle: "Proyectos Certificados",
+        images: [
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001101/IMG_1420_2_ycdka9.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001100/IMG_1427_2_gl6vz4.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001101/IMG_1435_2_yx80ma.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001101/IMG_1440_2_lu53d4.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1784001101/IMG_5419_s7rkmh.jpg"
+        ]
+    },
+    {
+        title: "Iluminación LED Bahía Biscayne",
+        subtitle: "Miami, EEUU — Desliza para ver más",
+        images: [
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636322/WhatsApp_Image_2026-07-09_at_3.39.33_PM_2_fvhnqa.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636415/WhatsApp_Image_2026-07-09_at_3.39.33_PM_3_qs5xlu.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636416/WhatsApp_Image_2026-07-09_at_3.39.32_PM_zos1ys.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636416/WhatsApp_Image_2026-07-09_at_3.39.33_PM_n47xa7.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636417/WhatsApp_Image_2026-07-09_at_3.39.32_PM_1_uc7o4o.jpg",
+        "https://res.cloudinary.com/dbzmwrh5d/image/upload/v1783636417/WhatsApp_Image_2026-07-09_at_3.39.33_PM_1_csfhxt.jpg"
+        ]
+    },
+];
+
+let currentProjectIndex = 0;
+let currentImageIndex = 0;
+let touchStartX = 0;
+let touchEndX = 0;
+
+function openProjectLightbox(projectIdx) {
+    currentProjectIndex = projectIdx;
+    currentImageIndex = 0;
+    const project = projectGalleries[projectIdx];
+
+    document.getElementById('lightboxProjectTitle').textContent = project.title;
+    document.getElementById('lightboxProjectSubtitle').textContent = project.subtitle;
+    document.getElementById('lightboxProjectMainImg').src = project.images[0];
+
+    const thumbsContainer = document.getElementById('lightboxProjectThumbs');
+    thumbsContainer.innerHTML = '';
+    project.images.forEach(function(img, idx) {
+        const thumb = document.createElement('img');
+        thumb.src = img;
+        thumb.alt = '';
+        thumb.className = 'thumb' + (idx === 0 ? ' active' : '');
+        thumb.onclick = function() {
+            currentImageIndex = idx;
+            updateLightboxImage();
+        };
+        thumbsContainer.appendChild(thumb);
+    });
+
+    document.getElementById('projectLightbox').classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    const hint = document.getElementById('swipeHint');
+    if (hint) {
+        hint.style.display = window.innerWidth <= 600 ? 'flex' : 'none';
+    }
 }
-function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
+
+function closeProjectLightbox() {
+    document.getElementById('projectLightbox').classList.remove('active');
     document.body.style.overflow = '';
 }
-function setLightboxImg(src) {
-    document.getElementById('lightboxMainImg').src = src;
-    document.querySelectorAll('.lightbox-thumbs img').forEach(function(t) { t.classList.remove('active'); });
-    event.target.classList.add('active');
+
+function updateLightboxImage() {
+    const project = projectGalleries[currentProjectIndex];
+    const mainImg = document.getElementById('lightboxProjectMainImg');
+    mainImg.style.opacity = '0.5';
+    setTimeout(function() {
+        mainImg.src = project.images[currentImageIndex];
+        mainImg.style.opacity = '1';
+    }, 150);
+
+    const thumbs = document.querySelectorAll('#lightboxProjectThumbs img');
+    thumbs.forEach(function(t) { t.classList.remove('active'); });
+    if (thumbs[currentImageIndex]) thumbs[currentImageIndex].classList.add('active');
 }
+
+function navigateLightbox(dir) {
+    const project = projectGalleries[currentProjectIndex];
+    currentImageIndex = (currentImageIndex + dir + project.images.length) % project.images.length;
+    updateLightboxImage();
+}
+
+// Touch swipe support
+const lightboxMain = document.getElementById('lightboxMainContainer');
+if (lightboxMain) {
+    lightboxMain.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    lightboxMain.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, {passive: true});
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            navigateLightbox(1);
+        } else {
+            navigateLightbox(-1);
+        }
+    }
+}
+
+// Keyboard navigation
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-});</script>
+    const lightbox = document.getElementById('projectLightbox');
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
+        closeProjectLightbox();
+    } else if (e.key === 'ArrowRight') {
+        navigateLightbox(1);
+    } else if (e.key === 'ArrowLeft') {
+        navigateLightbox(-1);
+    }
+});
+</script>
 </body>
 </html>
